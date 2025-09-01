@@ -3,7 +3,7 @@ FROM ${from} AS build
 
 WORKDIR /
 RUN apk upgrade -Ua && \
-    apk add --no-cache build-base freeradius-client-dev linux-pam-dev perl && \
+    apk add --no-cache build-base freeradius-client-dev linux-pam-dev perl pcre2-dev && \
     wget https://github.com/MarcJHuber/event-driven-servers/archive/refs/heads/master.zip -O event-driven-servers-master.zip && \
     unzip event-driven-servers-master.zip && \
     cd event-driven-servers-master && \
