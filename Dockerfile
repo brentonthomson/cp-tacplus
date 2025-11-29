@@ -15,6 +15,7 @@ FROM ${from}
 
 WORKDIR /
 
+COPY --from=build /usr/lib/libpcre2-8.so.0 /usr/lib/libpcre2-8.so.0
 COPY --from=build /usr/local/lib/ /usr/local/lib/
 COPY --from=build /usr/local/sbin/ /usr/local/sbin/
 COPY . .
