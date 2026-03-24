@@ -1,8 +1,8 @@
-ARG from=alpine:latest
+ARG from=alpine:3.23
 FROM ${from} AS build
 
 WORKDIR /
-RUN apk upgrade -Ua && \
+RUN apk update && apk upgrade && \
     apk add --no-cache build-base freeradius-client-dev linux-pam-dev perl pcre2-dev && \
     wget https://github.com/MarcJHuber/event-driven-servers/archive/refs/heads/master.zip -O event-driven-servers-master.zip && \
     unzip event-driven-servers-master.zip && \
