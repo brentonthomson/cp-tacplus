@@ -28,4 +28,4 @@ HEALTHCHECK --start-period=1m --interval=5m \
     CMD netstat -an | grep 49 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["cp-tacplus.cfg"]
+CMD ["cp-tacplus.cfg"] 
