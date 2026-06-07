@@ -7,6 +7,7 @@ RUN apk update && apk upgrade && \
     wget https://github.com/MarcJHuber/event-driven-servers/archive/refs/heads/master.zip -O event-driven-servers-master.zip && \
     unzip event-driven-servers-master.zip && \
     cd event-driven-servers-master && \
+	sed -i '/#define _GNU_SOURCE/a #include <stdlib.h>' misc/sysconf.h
     ./configure --minimal tac_plus-ng && \
     make && \
     make install
